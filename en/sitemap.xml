@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://web.federico.barcelona/authors/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-es"
+                href="http://web.federico.barcelona/es-es/authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://web.federico.barcelona/authors/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://web.federico.barcelona/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-es"
+                href="http://web.federico.barcelona/es-es/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://web.federico.barcelona/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://web.federico.barcelona/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-es"
+                href="http://web.federico.barcelona/es-es/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://web.federico.barcelona/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://web.federico.barcelona/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-es"
+                href="http://web.federico.barcelona/es-es/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://web.federico.barcelona/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://web.federico.barcelona/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-es"
+                href="http://web.federico.barcelona/es-es/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://web.federico.barcelona/tags/"
+                />
+  </url>
+  
+</urlset>
