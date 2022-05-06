@@ -12,7 +12,8 @@ pygmentsstyle = "b2"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-disqusShortname = "yourdiscussshortname"
+# To enable comments in the website, uncomment this and add a shortname
+#disqusShortname = "yourdiscussshortname"
 
 [params]
     author = "Federico Barcelona"
@@ -40,7 +41,7 @@ disqusShortname = "yourdiscussshortname"
     # "auto" (use preference set by browser)
     # "dark" (dark background, light foreground)
     # "light" (light background, dark foreground) (default)
-    colorscheme = "dark"
+    colorscheme = "auto"
 
     # Hide the toggle button, along with the associated vertical divider
     hidecolorschemetoggle = false
@@ -104,61 +105,34 @@ disqusShortname = "yourdiscussshortname"
     url = "https://www.linkedin.com/in/fede-barcelona/"
 
 
-[languages]
-    [languages.en]
-        languagename = "English"
+[languages.en]
+languagename = "English"
 
-        [languages.en.menu]
+[[languages.en.menu.main]]
+name = "About me"
+weight = 1
+url = "about/"
 
-            [[languages.en.menu.main]]
-            name = "About me"
-            weight = 1
-            url = "about/"
+[[languages.en.menu.main]]
+name = "Blog"
+weight = 2
+url = "posts/"
 
-            [[languages.en.menu.main]]
-            name = "Blog"
-            weight = 2
-            url = "posts/"
-
-            [[languages.en.menu.main]]
-            name = "Projects"
-            weight = 3
-            url = "projects/"
-
-            [[languages.en.menu.main]]
-            name = "Contact me"
-            weight = 5
-            url = "contact/"
-
-
-    [languages.es-es]
-        languagename = "Español"
-        title = "Federico Barcelona"
-
-        [languages.es-es.params]
-            info = "DevOps y Product Integration Engineer en Sysdig"
-            description = "¡Bienvenido/a a mi página!"
-            keywords = "blog,desarrollador,personal,devops"
-
-        [languages.es-es.menu]
-
-            [[languages.es-es.menu.main]]
-            name = "Acerca de mi"
-            weight = 1
-            url = "about/"
-
-            [[languages.es-es.menu.main]]
-            name = "Blog"
-            weight = 2
-            url = "posts/"
-
-            [[languages.es-es.menu.main]]
-            name = "Proyectos"
-            weight = 3
-            url = "projects/"
-
-            [[languages.es-es.menu.main]]
-            name = "Contacto"
-            weight = 5
-            url = "contact/"
-
+# [languages.es-es]
+# languagename = "Español"
+# title = "Federico Barcelona"
+#
+# [languages.es-es.params]
+#     info = "DevOps y Product Integration Engineer en Sysdig"
+#     description = "¡Bienvenido/a a mi página!"
+#     keywords = "blog,desarrollador,personal,devops"
+#
+# [[languages.es-es.menu.main]]
+# name = "Acerca de mi"
+# weight = 1
+# url = "about/"
+#
+# [[languages.es-es.menu.main]]
+# name = "Blog"
+# weight = 2
+# url = "posts/"
