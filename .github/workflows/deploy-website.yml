@@ -29,6 +29,6 @@ jobs:
         with:
           target_branch: gh-pages
           build_dir: public
-          fqdn: www.federico.barcelona
+          fqdn: federico.barcelona
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
