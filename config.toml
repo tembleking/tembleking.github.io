@@ -1,4 +1,4 @@
-baseurl = "http://web.federico.barcelona"
+baseurl = "https://federico.barcelona"
 title = "Federico Barcelona"
 
 theme = "hugo-coder"
