@@ -15,6 +15,24 @@ pygmentscodefencesguesssyntax = true
 # To enable comments in the website, uncomment this and add a shortname
 #disqusShortname = "yourdiscussshortname"
 
+
+
+[markup]
+[markup.highlight]
+anchorLineNos = true
+codeFences = true
+guessSyntax = true
+hl_Lines = ''
+lineAnchors = ''
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = false
+noClasses = true
+noHl = false
+style = 'dracula'
+tabWidth = 4
+
+
 [params]
     author = "Federico Barcelona"
     description = "Federico Barcelona's personal website"
