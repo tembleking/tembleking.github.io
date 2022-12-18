@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  HUGO_VERSION: 0.76.5
+  HUGO_VERSION: 0.108.0
 
 jobs:
   gohugo:
@@ -19,7 +19,7 @@ jobs:
         
       - name: Download and install Hugo
         run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb -O /tmp/hugo.deb
+          wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb -O /tmp/hugo.deb
           sudo dpkg -i /tmp/hugo.deb
       - name: Build Website
         run: hugo
