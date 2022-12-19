@@ -65,6 +65,8 @@ Cloud Security Software Engineer at Sysdig
     - Database maintenance.
     - Development of a Magento plugin to integrate GTS's features in the clients' shops.
 
+## 📚 Skills
+---------
 
 Below you can find the list of skills I have acquired during my career. In bold are the skills I love the most. I link them for HR people reading this, if you are a technical person, obviously, you will know them already 😁.
 
