@@ -65,7 +65,8 @@ params:
   # Enable Twemoji
   enableTwemoji: true
   # Custom CSS
-  customCSS: []
+  customCSS:
+  - style.css
   # Custom SCSS
   customSCSS: []
   # Custom JS
