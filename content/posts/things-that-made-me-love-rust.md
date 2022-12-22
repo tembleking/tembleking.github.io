@@ -1,6 +1,8 @@
 ---
 title: Things that made me love Rust
 date: 2022-05-06
+tags: [Rust]
+keywords: [rust, traits, go, golang, rustlang, derive, pattern matching, iterator, ownership, borrowing, lifetimes]
 ---
 
 I have recently started working on the final project for the University, and I decided to do it in [Rust](https://www.rust-lang.org/), mainly to learn
