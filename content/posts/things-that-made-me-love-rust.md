@@ -1,28 +1,30 @@
 ---
 title: Things that made me love Rust
 date: 2022-05-06
-tags: [Rust]
-keywords: [rust, traits, go, golang, rustlang, derive, pattern matching, iterator, ownership, borrowing, lifetimes]
+tags: [ Rust ]
+keywords: [ rust, traits, go, golang, rustlang, derive, pattern matching, iterator, ownership, borrowing, lifetimes ]
 ---
 
-I have recently started working on the final project for the University, and I decided to do it in [Rust](https://www.rust-lang.org/), mainly to learn
+I have recently started working on the final project for the University, and I decided to do it
+in [Rust](https://www.rust-lang.org/), mainly to learn
 more about the language.
 You can try to learn a language by just reading, but the actual learning comes from actually writing code and facing the
 creation of a working program.
 
-I am currently a [Go](https://go.dev/) developer at [Sysdig](https://sysdig.com/), and I have to admit that I tried to write Rust code like I wrote Go. This is a
+I am currently a [Go](https://go.dev/) developer at [Sysdig](https://sysdig.com/), and I have to admit that I tried to
+write Rust code like I wrote Go. This is a
 mistake; both languages are very different from one another. Some things I wanted to do in Go, I couldn't because the
 language is designed to be too simplistic. I understand the tradeoffs of Go, but having to write some algorithms
 yourself all the time, is just too tedious.
 
 So here are some things that made me love the language for how it is designed.
 
-# Traits
+## Traits
 
 Traits in Rust can be understood as [Interfaces](https://en.wikipedia.org/wiki/Interface_(object-oriented_programming))
-in other languages like Go or Java. They are mostly the same, but there are some differences that, in my opinion, 
+in other languages like Go or Java. They are mostly the same, but there are some differences that, in my opinion,
 make Traits much more powerful. In particular, you can
-use [Trait bounds](https://doc.rust-lang.org/book/ch10-02-traits.html#trait-bound-syntax) to implement methods or other 
+use [Trait bounds](https://doc.rust-lang.org/book/ch10-02-traits.html#trait-bound-syntax) to implement methods or other
 traits conditionally.
 
 For example, let's say you have a tuple:
@@ -45,7 +47,8 @@ impl<T: PartialOrd> Tuple<T> {
 ```
 
 The `Tuple<T>::smaller` method will only be available if the generic type `T` provided in the Tuple implements
-the [`PartialOrd`](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html) trait, which is [implemented](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html#implementors), for example,
+the [`PartialOrd`](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html) trait, which
+is [implemented](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html#implementors), for example,
 for most of the data types in the standard library, but maybe not for custom structs.
 
 ----
@@ -84,8 +87,8 @@ conditional trait bounds:
 
 ```rust
 impl<T, U> Into<U> for T
-where
-    U: From<T>
+    where
+        U: From<T>
 {
     fn into(self) -> U {
         U::from(self)
@@ -93,7 +96,7 @@ where
 }
 ```
 
-# Derive clauses
+## Derive clauses
 
 This is one of my favourite features of Rust. It allows you to create default implementation of traits for your types,
 by just writing `#[derive(...)]` in the type definition.
@@ -152,14 +155,14 @@ impl<T: ::core::cmp::PartialEq> ::core::cmp::PartialEq for Tuple<T> {
 }
 ```
 
-# Pattern matching
+## Pattern matching
 
 Another cool feature of Rust is pattern matching.
 
 ```rust
 struct Color(f64, f64, f64);
 
-impl Color{
+impl Color {
     fn as_string(self) -> String {
         let Self(red, green, blue) = self;
         format!("red: {}, green: {}, blue: {}", red, green, blue)
@@ -203,7 +206,7 @@ impl WifiState {
 }
 ```
 
-# Option
+## Option
 
 In **safe** Rust, there's no way to have null pointer dereferences. There's no way to **create** a null pointer.
 This is by design, and I think it's fantastic.
@@ -220,8 +223,8 @@ If you want to use the value inside the `Option`, you must unwrap it first. It c
 let x_has_value = Some(1);
 
 match x_has_value {
-    Some(x) => println!("x has value {}", x),
-    None => println!("x has no value"),
+Some(x) => println!("x has value {}", x),
+None => println!("x has no value"),
 }
 ```
 
@@ -231,9 +234,9 @@ It can also be checked with `if let` statements:
 let x_has_value = Some(1);
 
 if let Some(x) = x_has_value {
-    println!("x has value {}", x);
+println!("x has value {}", x);
 } else {
-    println!("x has no value");
+println ! ("x has no value");
 }
 ```
 
@@ -243,14 +246,14 @@ Which is the same as:
 let x_has_value = Some(1);
 
 if x_has_value.is_some() {
-    let x = x_has_value.unwrap();
-    println!("x has value {}", x);
+let x = x_has_value.unwrap();
+println! ("x has value {}", x);
 } else {
-    println!("x has no value");
+println ! ("x has no value");
 }
 ```
 
-# Result and the ? operator
+## Result and the ? operator
 
 In Go, normally, the functions return a tuple of the value and an error, and the error must be checked all the time:
 
@@ -274,17 +277,17 @@ The equivalent code in rust from the Go code would be:
 ```rust
 let computation = do_something();
 if let Ok(result) = computation {
-    println!("computation value: {}", result);
+println!("computation value: {}", result);
 } else if let Err(error) = computation {
-    return Err(error.into());
+return Err(error.into());
 }
 ```
 
-This still is very verbose when using `if let` and pattern matching. 
+This still is very verbose when using `if let` and pattern matching.
 Hopefully, we have the `?` operator to return the error to the caller:
 
 ```rust
-let result = do_something()?;
+let result = do_something() ?;
 println!("computation value: {}", result);
 ```
 
@@ -296,7 +299,7 @@ println!("computation value: {}", do_something()?);
 
 Isn't it great? 🤓
 
-# Iterators
+## Iterators
 
 The [Iterator pattern](https://en.wikipedia.org/wiki/Iterator) is a common design pattern in computer science that
 allows traversing a container independently of the type performing some other operations on the elements.
@@ -310,11 +313,10 @@ The rest of the methods to work with iterators
 are [implemented for you](https://doc.rust-lang.org/std/iter/trait.Iterator.html#provided-methods), based on the first
 one.
 
-
 Working in Go, I've been missing this pattern quite a lot. In Go, you always use `for` to iterate over things,
-whether they are a slice, a map, or a channel. 
+whether they are a slice, a map, or a channel.
 
-So, in the end, you always end up doing: 
+So, in the end, you always end up doing:
 
 ```go
 for index, value := range someCollection {
@@ -342,12 +344,12 @@ for _, element := range someSlice {
 Do you want to do the same in Rust? Easy:
 
 ```rust
-some_slice.iter().filter(|element| **element > 0).take(3).sum()
+some_slice.iter().filter( | element| * * element > 0).take(3).sum()
 ```
 
 Needless to say, this is a time saver and ends up in better maintainable code.
 
-# Ownership, Borrowing and Lifetimes
+## Ownership, Borrowing and Lifetimes
 
 For me, this is the killer feature in Rust. This is what makes this programming language so
 powerful, making it more secure than other languages while maintaining performance without
@@ -360,7 +362,8 @@ the owner goes out of the scope, the value is dropped.
 Now, in order to use it, you need to pass this value around, but there are two main ways of doing so:
 
 - Giving away ownership to another variable.
-- Lending the value to another variable that will return the ownership. This is **borrowing**, and it's done by sending a reference to the actual value.
+- Lending the value to another variable that will return the ownership. This is **borrowing**, and it's done by sending
+  a reference to the actual value.
 
 Let's say you have this code:
 
@@ -377,22 +380,24 @@ Do you want to call it multiple times? Do not give it ownership; just **borrow i
 
 ```rust
 let my_var = String::new("AwesomeValue");
-do_something_borrowing(&my_var);
-do_something_borrowing(&my_var);
-do_something_borrowing(&my_var);
+do_something_borrowing( & my_var);
+do_something_borrowing( & my_var);
+do_something_borrowing( & my_var);
 ```
 
-Looking at this code example, it's clear that we are not sending the value itself, but a **reference** 
+Looking at this code example, it's clear that we are not sending the value itself, but a **reference**
 to the actual value _(A reference in Rust is like a pointer in C that's known to always be valid and
 correctly aligned)_.
 
-So, when sending the reference to the value, we are borrowing it. But then, another set of rules 
+So, when sending the reference to the value, we are borrowing it. But then, another set of rules
 enters the stage.
 At any given time, you can have either:
+
 - One **mutable** reference
 - Any number of **immutable** references.
 
-References are always checked with the corresponding [lifetimes](https://en.wikipedia.org/wiki/Variable_(computer_science)#Scope_and_extent) of the
+References are always checked with the
+corresponding [lifetimes](https://en.wikipedia.org/wiki/Variable_(computer_science)#Scope_and_extent) of the
 variables they point to.
 In C this code compiles **but is not correct**:
 
@@ -427,9 +432,15 @@ error[E0515]: cannot return reference to local variable `my_var`
 For more information about this error, try `rustc --explain E0515`.
 ```
 
-The code will never compile because it's not valid. More info at [E0515](https://doc.rust-lang.org/error_codes/E0515.html).
+The code will never compile because it's not valid. More info
+at [E0515](https://doc.rust-lang.org/error_codes/E0515.html).
 
 This prevents the existence of [data races](https://en.wikipedia.org/wiki/Race_condition#Data_race),
-[null pointers](https://en.wikipedia.org/wiki/Null_pointer), and [dangling pointers](https://en.wikipedia.org/wiki/Dangling_pointer)
+[null pointers](https://en.wikipedia.org/wiki/Null_pointer),
+and [dangling pointers](https://en.wikipedia.org/wiki/Dangling_pointer)
 at compile time.
 
+To wrap it up, my experience with Rust has been incredibly positive. The language's features such as traits, automatic
+trait derivation, pattern matching, option type, simplified error handling, expressive iterators, and
+ownership/borrowing have impressed me greatly. Rust has become my language of choice, as it offers a powerful and secure
+programming experience.
