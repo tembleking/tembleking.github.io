@@ -108,14 +108,14 @@ help yourself!"
 It's like broadcasting your secrets on live television. You might as well hire a skywriter to spell them out in the
 clouds. It's a disaster waiting to happen.
 
-## But do developers actually need access even to a single secret?
+## But do developers actually need access to a single stored secret?
 
-Well, no, they don't. No one, **not even administrators**, should have access to the secrets.
+Well, no, they don't. No one, **not even administrators**, should have access to the stored secrets. Not even if encrypted.
 
 ![](/images/meme-admin-opens-email-trojan.jpg)
 
-They should only be able to access the secrets when they need them, for as little time as possible, and only the secrets
-they need. After that,
+They should only be able to request access to the secrets when they need them, for as little time as possible, and only the secrets
+they need. The secret should be generated on demand, with a temporary lifetime. After that,
 the secret should be rotated and made invalid, so when anyone needs it again, they have to request it again.
 
 This is the main benefit of using a secret management system like KMS or Vault. You can grant access to a specific
