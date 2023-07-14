@@ -6,8 +6,8 @@ Cloud Security Software Engineer at Sysdig
 
 ## 👨‍💻 Experience
 -------------
-### [Sysdig] _(4 years+)_
-
+### [Sysdig] _(5 years+)_
+  
 - **Cloud Security Software Engineer** _(Jan 2021 - Present)_
 
   Develop a new product called [Cloud Connector](https://docs.sysdig.com/en/docs/sysdig-secure/sysdig-secure-for-cloud/)
