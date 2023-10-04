@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  DevOps Beware: The Sad Truth About SOPS and Secret Management · Federico Barcelona
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Federico Barcelona">
+<meta name="description" content="I&rsquo;ve read everywhere the miracles of using SOPS within a project to maintain the secrets in a secure way within the source code of the project, or even for GitOps and CI/CD pipelines. But, is it really that secure? Let&rsquo;s buckle up for a wild ride through the chaotic world of secret management. Strap in tightly because we&rsquo;re about to explore why SOPS falls short in being a secret management superhero we&rsquo;ve been told.">
+<meta name="keywords" content="secret management, security, SOPS, encryption, access control, insider attacks, secret rotation, decrypted secrets, vulnerabilities, risk, bad actors, collaboration, granularity, auditing, compliance, trade-offs, alternative solutions, fine-grained access control">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DevOps Beware: The Sad Truth About SOPS and Secret Management"/>
+<meta name="twitter:description" content="I&rsquo;ve read everywhere the miracles of using SOPS within a project to maintain the secrets in a secure way within the source code of the project, or even for GitOps and CI/CD pipelines. But, is it really that secure? Let&rsquo;s buckle up for a wild ride through the chaotic world of secret management. Strap in tightly because we&rsquo;re about to explore why SOPS falls short in being a secret management superhero we&rsquo;ve been told."/>
+
+<meta property="og:title" content="DevOps Beware: The Sad Truth About SOPS and Secret Management" />
+<meta property="og:description" content="I&rsquo;ve read everywhere the miracles of using SOPS within a project to maintain the secrets in a secure way within the source code of the project, or even for GitOps and CI/CD pipelines. But, is it really that secure? Let&rsquo;s buckle up for a wild ride through the chaotic world of secret management. Strap in tightly because we&rsquo;re about to explore why SOPS falls short in being a secret management superhero we&rsquo;ve been told." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://federico.barcelona/posts/sops-falls-sort-secret-management/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-07-14T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://federico.barcelona/posts/sops-falls-sort-secret-management/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7f9d180e3b3bebba9ba80d55eed1255c35e00764872854736d6ad7db38884ffc.css" integrity="sha256-f50YDjs767qbqA1V7tElXDXgB2SHKFRzbWrX2ziIT/w=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.216e36d3eaf6f4cdfd67dc1200c49a8169e6478102977b3e9ac51a064c57054c.css" integrity="sha256-IW420&#43;r29M39Z9wSAMSagWnmR4ECl3s&#43;msUaBkxXBUw=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/style.min.2707d896040109a9970a660ff6e16f668ad078018a34f97de75a11146581bdf5.css" integrity="sha256-JwfYlgQBCamXCmYP9uFvZorQeAGKNPl951oRFGWBvfU=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.108.0">
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Federico Barcelona
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About me</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://federico.barcelona/posts/sops-falls-sort-secret-management/">
+              DevOps Beware: The Sad Truth About SOPS and Secret Management
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-07-14T00:00:00Z">
+                July 14, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              7-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/secret-management/">Secret Management</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/security/">Security</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/sops/">SOPS</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>I&rsquo;ve read everywhere the miracles of using SOPS within a project to maintain the secrets in a secure way within the
+source
+code of the project, or even for GitOps and CI/CD pipelines. But, is it really that secure?
+Let&rsquo;s buckle up for a wild ride through the chaotic world of secret management. Strap in tightly because we&rsquo;re about to
+explore why <a href="https://github.com/getsops/sops"  target="_blank" rel="noopener">SOPS</a> falls short in being a secret management superhero we&rsquo;ve been told.</p>
+<h2 id="the-encryption-mirage-safety-today-breach-tomorrow">
+  The Encryption Mirage: Safety Today, Breach Tomorrow
+  <a class="heading-link" href="#the-encryption-mirage-safety-today-breach-tomorrow">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Oh, encryption, you sly little devil. We put our trust in you, thinking you&rsquo;ll protect our secrets from prying eyes. But
+guess what?</p>
+<p>Let&rsquo;s picture the following scenario: You are a company that has a lot of secrets, for different services, and
+different environments. You use SOPS to encrypt all of them within a YAML file or multiple YAML files, so you can
+then decrypt them at deployment time. You store them in Git, of course, because you want to keep track of the changes
+made to the secrets and you want to audit who changed what and when. You also want to be able to rollback to a previous
+version of the secrets if something goes wrong.
+All the secrets are encrypted, so you feel safe. But, are you really?</p>
+<blockquote>
+<p>While encryption is crucial in protecting secrets at rest, the moment they are decrypted for use, they become exposed
+to potential breaches.</p>
+</blockquote>
+<p>Imagine now a scenario where an authorized individual, a developer, wants to add a new secret or modify one of them
+because they want to rotate, let&rsquo;s say, the database password for their secret. They have to decrypt the whole file just
+to add or modify one secret. This means that the whole file is now decrypted, and the developer can see all the secrets
+in plain text.</p>
+<p>If you don&rsquo;t see why this is a security risk, I don&rsquo;t know what to tell you.</p>
+<p>In such cases, the encrypted secrets become no more secure than plain text, posing a significant risk to the
+organization.</p>
+<h2 id="insider-attacks-trust-no-one-especially-the-trusted">
+  Insider Attacks: Trust No One, Especially the Trusted
+  <a class="heading-link" href="#insider-attacks-trust-no-one-especially-the-trusted">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>One of the most concerning aspects of secret management is the threat posed
+by <a href="https://www.ibm.com/topics/insider-threats"  target="_blank" rel="noopener">insider attacks</a>. Even if encryption
+mechanisms are in place, a person with the ability to decrypt a file <strong>holds access to all secrets</strong>.</p>
+<p>Should this person leave the company or have malicious intent, they can take advantage of this situation by stealing and
+potentially selling the sensitive information to bad actors. This represents a severe security loophole, putting the
+organization&rsquo;s reputation, assets, and customer data at significant risk.</p>
+<p><img src="/images/meme-zero-trust.png" alt=""></p>
+<p>Following the previous example, that developer has news that their company is going to perform layoffs (like we&rsquo;ve seen
+in 2022), and there&rsquo;s been problems with salary agreements, or maybe they just want to make some extra money.
+They can now sell all the secrets to a bad actor, and the bad actor can use them to access the company&rsquo;s infrastructure
+and steal customer data, or even worse, modify the infrastructure to steal customer data without anyone noticing.</p>
+<p>Now, you might say, <em>&ldquo;Well, that&rsquo;s not a problem, we can just rotate the master key just after the layoffs and the
+developer won&rsquo;t be able to decrypt the file anymore.&rdquo;</em></p>
+<p>That&rsquo;s true, but what if the developer has already decrypted the file and has the secrets in plain text?</p>
+<p>Let&rsquo;s picture that the developer has saved them in a file on their computer in plain text.
+You might think that, following the best practices, you just have to rotate periodically the secrets, so any developer
+that might have had access to the secrets will have useless information. But&hellip;</p>
+<h2 id="challenges-with-secret-rotation">
+  Challenges with Secret Rotation
+  <a class="heading-link" href="#challenges-with-secret-rotation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>&hellip; it&rsquo;s not that easy. If you store all the secrets within a single file, you have to rotate every single secret in
+the file.
+Depending on the number of secrets you store in the file, this will be a very time-consuming process, and not practical
+at all. You also need to ensure that every secret is valid, and you did not break anything.</p>
+<blockquote>
+<p>Secret rotation is a crucial aspect of maintaining a secure environment. Regularly changing secrets helps mitigate the
+potential impact of a breach. However, the process becomes much more complex when secrets are stored in encrypted
+files,
+especially when these files contain a large number of secrets.</p>
+</blockquote>
+<p>In a team environment, multiple developers might need access to different secrets within a file. With SOPS,
+granting access to a specific secret actually requires giving access to all the secrets in the file &ndash; so now, multiple
+developers have access to all the secrets.</p>
+<p>This is not granular access control, and it undermines
+the <a href="https://en.wikipedia.org/wiki/Principle_of_least_privilege"  target="_blank" rel="noopener">principle of least privilege</a>. Also you
+cannot <a href="https://en.wikipedia.org/wiki/Information_security_audit#Logical_security_audit"  target="_blank" rel="noopener">audit</a>
+who accessed what secret, because you can only audit who accessed the whole file, so you have to assume that everyone
+that accessed the file accessed all the secrets within it, and potentially has a copy of them in plain text.</p>
+<h2 id="the-master-key-is-still-a-key">
+  The master key is still a key
+  <a class="heading-link" href="#the-master-key-is-still-a-key">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Let&rsquo;s not forget that the master key used for encryption in secret management systems must also be regularly rotated to
+adhere to best practices and enhance security. However, when it comes to tools like SOPS, rotating the master key can
+pose compatibility challenges. SOPS relies on a specific encryption algorithm and key management approach, which may not
+seamlessly support master key rotation without potential disruptions or data integrity issues.</p>
+<p><img src="/images/meme-master-key.png" alt=""></p>
+<p>SOPS has <a href="https://github.com/getsops/sops/issues/1135"  target="_blank" rel="noopener">identified incompatibilities with automatic master key rotation</a>
+that can complicate the process of transitioning to a new key and require careful coordination to prevent
+any <a href="https://github.com/getsops/sops/issues/855"  target="_blank" rel="noopener">unintended
+consequences</a> during the rotation phase.</p>
+<h2 id="lets-face-it-git-was-never-meant-to-be-a-secret-storage-solution">
+  Let&rsquo;s face it: Git was never meant to be a secret storage solution
+  <a class="heading-link" href="#lets-face-it-git-was-never-meant-to-be-a-secret-storage-solution">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Our beloved Git, the hero of version control.</p>
+<p>Don&rsquo;t mind me, it&rsquo;s fantastic for managing source code and collaborating on projects. But secrets? Yeah, not so much.
+Storing secrets in Git repositories is like leaving your front door wide open with a neon sign saying, &ldquo;Come on in and
+help yourself!&rdquo;
+It&rsquo;s like broadcasting your secrets on live television. You might as well hire a skywriter to spell them out in the
+clouds. It&rsquo;s a disaster waiting to happen.</p>
+<h2 id="but-do-developers-actually-need-access-to-a-single-stored-secret">
+  But do developers actually need access to a single stored secret?
+  <a class="heading-link" href="#but-do-developers-actually-need-access-to-a-single-stored-secret">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Well, no, they don&rsquo;t. No one, <strong>not even administrators</strong>, should have access to the stored secrets. Not even if encrypted.</p>
+<p><img src="/images/meme-admin-opens-email-trojan.jpg" alt=""></p>
+<p>They should only be able to request access to the secrets when they need them, for as little time as possible, and only the secrets
+they need. The secret should be generated on demand, with a temporary lifetime. After that,
+the secret should be rotated and made invalid, so when anyone needs it again, they have to request it again.</p>
+<p>This is the main benefit of using a secret management system like KMS or Vault. You can grant access to a specific
+secret to a specific user or application, and you can audit who accessed what secret and when. You can also rotate
+secrets automatically, and you can update encryption configurations with ease.</p>
+<p>In the previous example, the developer would not have access to the secrets, but they would have access to the
+application that needs the secrets. The application would request the secrets from the secret management system, and
+the developer would not be able to see the secrets, only the application would. In case the developer leaves the
+company, you can just revoke their access to the application, and they won&rsquo;t be able to access the secrets anymore.</p>
+<p>In the need of debugging the application, the developer would have to request access to the secrets, and the secret
+management system would grant them access for a limited time, and only to the secrets they need. After the debugging
+session, the developer would not have access to the secrets anymore because the SMS would have rotated them
+automatically.</p>
+<h2 id="to-sum-up">
+  To sum up
+  <a class="heading-link" href="#to-sum-up">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I am not saying that SOPS is a bad tool, it definitely has its use cases, but in my opinion,
+it should not be used for secret management within an organization for access to critical information.</p>
+<p>Encryption alone is not enough, as decrypted secrets become vulnerable. Insider attacks and the challenges of secret
+rotation pose significant risks. Git is not a suitable solution for secret storage. Instead, adopting a comprehensive
+secret management system like AWS KMS, GCP KMS, Azure Key Vault or Hashicorp Vault, with granular access control and
+automatic rotation, is crucial for effective security.</p>
+<p>Stay safe, but also, keep your secrets safe!</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    
+  </section>
+</footer>
+
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.27afce394fb6284f521b3fbc9f6a8326342333c3092267f3944d770489876fed.js" integrity="sha256-J6/OOU&#43;2KE9SGz&#43;8n2qDJjQjM8MJImfzlE13BImHb&#43;0="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

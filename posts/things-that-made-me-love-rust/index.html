@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  Things that made me love Rust · Federico Barcelona
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Federico Barcelona">
+<meta name="description" content="I have recently started working on the final project for the University, and I decided to do it in Rust, mainly to learn more about the language. You can try to learn a language by just reading, but the actual learning comes from actually writing code and facing the creation of a working program.
+I am currently a Go developer at Sysdig, and I have to admit that I tried to write Rust code like I wrote Go.">
+<meta name="keywords" content="rust, traits, go, golang, rustlang, derive, pattern matching, iterator, ownership, borrowing, lifetimes">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Things that made me love Rust"/>
+<meta name="twitter:description" content="I have recently started working on the final project for the University, and I decided to do it in Rust, mainly to learn more about the language. You can try to learn a language by just reading, but the actual learning comes from actually writing code and facing the creation of a working program.
+I am currently a Go developer at Sysdig, and I have to admit that I tried to write Rust code like I wrote Go."/>
+
+<meta property="og:title" content="Things that made me love Rust" />
+<meta property="og:description" content="I have recently started working on the final project for the University, and I decided to do it in Rust, mainly to learn more about the language. You can try to learn a language by just reading, but the actual learning comes from actually writing code and facing the creation of a working program.
+I am currently a Go developer at Sysdig, and I have to admit that I tried to write Rust code like I wrote Go." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://federico.barcelona/posts/things-that-made-me-love-rust/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-06T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://federico.barcelona/posts/things-that-made-me-love-rust/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7f9d180e3b3bebba9ba80d55eed1255c35e00764872854736d6ad7db38884ffc.css" integrity="sha256-f50YDjs767qbqA1V7tElXDXgB2SHKFRzbWrX2ziIT/w=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.216e36d3eaf6f4cdfd67dc1200c49a8169e6478102977b3e9ac51a064c57054c.css" integrity="sha256-IW420&#43;r29M39Z9wSAMSagWnmR4ECl3s&#43;msUaBkxXBUw=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/style.min.2707d896040109a9970a660ff6e16f668ad078018a34f97de75a11146581bdf5.css" integrity="sha256-JwfYlgQBCamXCmYP9uFvZorQeAGKNPl951oRFGWBvfU=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.108.0">
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Federico Barcelona
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About me</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://federico.barcelona/posts/things-that-made-me-love-rust/">
+              Things that made me love Rust
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-05-06T00:00:00Z">
+                May 6, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              9-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/rust/">Rust</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>I have recently started working on the final project for the University, and I decided to do it
+in <a href="https://www.rust-lang.org/"  target="_blank" rel="noopener">Rust</a>, mainly to learn
+more about the language.
+You can try to learn a language by just reading, but the actual learning comes from actually writing code and facing the
+creation of a working program.</p>
+<p>I am currently a <a href="https://go.dev/"  target="_blank" rel="noopener">Go</a> developer at <a href="https://sysdig.com/"  target="_blank" rel="noopener">Sysdig</a>, and I have to admit that I tried to
+write Rust code like I wrote Go. This is a
+mistake; both languages are very different from one another. Some things I wanted to do in Go, I couldn&rsquo;t because the
+language is designed to be too simplistic. I understand the tradeoffs of Go, but having to write some algorithms
+yourself all the time, is just too tedious.</p>
+<p>So here are some things that made me love the language for how it is designed.</p>
+<h2 id="traits">
+  Traits
+  <a class="heading-link" href="#traits">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Traits in Rust can be understood as <a href="https://en.wikipedia.org/wiki/Interface_%28object-oriented_programming%29"  target="_blank" rel="noopener">Interfaces</a>
+in other languages like Go or Java. They are mostly the same, but there are some differences that, in my opinion,
+make Traits much more powerful. In particular, you can
+use <a href="https://doc.rust-lang.org/book/ch10-02-traits.html#trait-bound-syntax"  target="_blank" rel="noopener">Trait bounds</a> to implement methods or other
+traits conditionally.</p>
+<p>For example, let&rsquo;s say you have a tuple:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">Tuple</span><span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> {
+</span></span><span style="display:flex;"><span>    first: <span style="color:#50fa7b">T</span>,
+</span></span><span style="display:flex;"><span>    second: <span style="color:#50fa7b">T</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">impl</span><span style="color:#ff79c6">&lt;</span>T: <span style="color:#8be9fd;font-style:italic">PartialOrd</span><span style="color:#ff79c6">&gt;</span> Tuple<span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">fn</span> <span style="color:#50fa7b">smaller</span>(<span style="color:#ff79c6">&amp;</span>self) -&gt; <span style="color:#ff79c6">&amp;</span><span style="color:#50fa7b">T</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> self.first <span style="color:#ff79c6">&lt;</span> self.second {
+</span></span><span style="display:flex;"><span>            self.first
+</span></span><span style="display:flex;"><span>        } <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>            self.second
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>Tuple&lt;T&gt;::smaller</code> method will only be available if the generic type <code>T</code> provided in the Tuple implements
+the <a href="https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html"  target="_blank" rel="noopener"><code>PartialOrd</code></a> trait, which
+is <a href="https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html#implementors"  target="_blank" rel="noopener">implemented</a>, for example,
+for most of the data types in the standard library, but maybe not for custom structs.</p>
+<hr>
+<p>Another example would be the <a href="https://doc.rust-lang.org/std/convert/trait.From.html"  target="_blank" rel="noopener"><code>From</code></a> trait:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#ff79c6">pub</span> <span style="color:#ff79c6">trait</span> <span style="color:#8be9fd;font-style:italic">From</span><span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">fn</span> <span style="color:#50fa7b">from</span>(T) -&gt; <span style="color:#50fa7b">Self</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This trait allows any type that implements it to transform from type <code>T</code> to this type.
+For example, <code>impl From&lt;bool&gt; for i64</code> allows to transform from <code>bool</code> to <code>i64</code>, so you can do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> x: <span style="color:#8be9fd">bool</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> y: <span style="color:#8be9fd">i64</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd">i64</span>::from(x);
+</span></span></code></pre></div><p>Then I found the opposite trait: <a href="https://doc.rust-lang.org/std/convert/trait.Into.html"  target="_blank" rel="noopener"><code>Into</code></a>.
+This allows explicit transformations like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> x: <span style="color:#8be9fd">bool</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span>;
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> y: <span style="color:#8be9fd">i64</span> <span style="color:#ff79c6">=</span> x.into();
+</span></span></code></pre></div><p>I thought: <em>&ldquo;Wait, isn&rsquo;t this repeating the same thing? If you want to transform from <code>bool</code> to <code>i64</code>, you
+need
+to be consistent and implement both.&rdquo;</em>.</p>
+<p>Fool of me! You don&rsquo;t need to implement the <code>Into</code> trait yourself! It is implemented for <strong>ANY</strong> type that
+implements <code>From</code> using
+conditional trait bounds:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#ff79c6">impl</span><span style="color:#ff79c6">&lt;</span>T, U<span style="color:#ff79c6">&gt;</span> <span style="color:#8be9fd;font-style:italic">Into</span><span style="color:#ff79c6">&lt;</span>U<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">for</span> T
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">where</span>
+</span></span><span style="display:flex;"><span>        U: <span style="color:#8be9fd;font-style:italic">From</span><span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">fn</span> <span style="color:#50fa7b">into</span>(self) -&gt; <span style="color:#50fa7b">U</span> {
+</span></span><span style="display:flex;"><span>        U::from(self)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="derive-clauses">
+  Derive clauses
+  <a class="heading-link" href="#derive-clauses">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This is one of my favourite features of Rust. It allows you to create default implementation of traits for your types,
+by just writing <code>#[derive(...)]</code> in the type definition.</p>
+<p>Let&rsquo;s say I want to have a <code>Tuple</code> type that implements the <code>PartialEq</code> trait, so I can compare two tuples with <code>==</code>
+and <code>!=</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#ff79c6">#[derive(PartialEq)]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">Tuple</span><span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> {
+</span></span><span style="display:flex;"><span>    first: <span style="color:#50fa7b">T</span>,
+</span></span><span style="display:flex;"><span>    second: <span style="color:#50fa7b">T</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>By defining the derive clause, I can now compare two tuples with <code>==</code> and <code>!=</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> x <span style="color:#ff79c6">=</span> Tuple { first: <span style="color:#bd93f9">1</span>, second: <span style="color:#bd93f9">2</span> };
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> y <span style="color:#ff79c6">=</span> Tuple { first: <span style="color:#bd93f9">1</span>, second: <span style="color:#bd93f9">2</span> };
+</span></span><span style="display:flex;"><span>assert!(x <span style="color:#ff79c6">==</span> y);
+</span></span></code></pre></div><p>The Rust compiler automatically generates the <code>PartialEq</code> implementation for my type on compile time:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#ff79c6">impl</span><span style="color:#ff79c6">&lt;</span>T: ::core::cmp::<span style="color:#8be9fd;font-style:italic">PartialEq</span><span style="color:#ff79c6">&gt;</span> ::core::cmp::<span style="color:#8be9fd;font-style:italic">PartialEq</span> <span style="color:#ff79c6">for</span> Tuple<span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">#[inline]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">fn</span> <span style="color:#50fa7b">eq</span>(<span style="color:#ff79c6">&amp;</span>self, other: <span style="color:#ff79c6">&amp;</span><span style="color:#50fa7b">Tuple</span><span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span>) -&gt; <span style="color:#8be9fd">bool</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">match</span> <span style="color:#ff79c6">*</span>other {
+</span></span><span style="display:flex;"><span>            Tuple {
+</span></span><span style="display:flex;"><span>                first: <span style="color:#50fa7b">ref</span> __self_1_0,
+</span></span><span style="display:flex;"><span>                second: <span style="color:#50fa7b">ref</span> __self_1_1,
+</span></span><span style="display:flex;"><span>            } <span style="color:#ff79c6">=&gt;</span> <span style="color:#ff79c6">match</span> <span style="color:#ff79c6">*</span>self {
+</span></span><span style="display:flex;"><span>                Tuple {
+</span></span><span style="display:flex;"><span>                    first: <span style="color:#50fa7b">ref</span> __self_0_0,
+</span></span><span style="display:flex;"><span>                    second: <span style="color:#50fa7b">ref</span> __self_0_1,
+</span></span><span style="display:flex;"><span>                } <span style="color:#ff79c6">=&gt;</span> (<span style="color:#ff79c6">*</span>__self_0_0) <span style="color:#ff79c6">==</span> (<span style="color:#ff79c6">*</span>__self_1_0) <span style="color:#ff79c6">&amp;&amp;</span> (<span style="color:#ff79c6">*</span>__self_0_1) <span style="color:#ff79c6">==</span> (<span style="color:#ff79c6">*</span>__self_1_1),
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">#[inline]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">fn</span> <span style="color:#50fa7b">ne</span>(<span style="color:#ff79c6">&amp;</span>self, other: <span style="color:#ff79c6">&amp;</span><span style="color:#50fa7b">Tuple</span><span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span>) -&gt; <span style="color:#8be9fd">bool</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">match</span> <span style="color:#ff79c6">*</span>other {
+</span></span><span style="display:flex;"><span>            Tuple {
+</span></span><span style="display:flex;"><span>                first: <span style="color:#50fa7b">ref</span> __self_1_0,
+</span></span><span style="display:flex;"><span>                second: <span style="color:#50fa7b">ref</span> __self_1_1,
+</span></span><span style="display:flex;"><span>            } <span style="color:#ff79c6">=&gt;</span> <span style="color:#ff79c6">match</span> <span style="color:#ff79c6">*</span>self {
+</span></span><span style="display:flex;"><span>                Tuple {
+</span></span><span style="display:flex;"><span>                    first: <span style="color:#50fa7b">ref</span> __self_0_0,
+</span></span><span style="display:flex;"><span>                    second: <span style="color:#50fa7b">ref</span> __self_0_1,
+</span></span><span style="display:flex;"><span>                } <span style="color:#ff79c6">=&gt;</span> (<span style="color:#ff79c6">*</span>__self_0_0) <span style="color:#ff79c6">!=</span> (<span style="color:#ff79c6">*</span>__self_1_0) <span style="color:#ff79c6">||</span> (<span style="color:#ff79c6">*</span>__self_0_1) <span style="color:#ff79c6">!=</span> (<span style="color:#ff79c6">*</span>__self_1_1),
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="pattern-matching">
+  Pattern matching
+  <a class="heading-link" href="#pattern-matching">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Another cool feature of Rust is pattern matching.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">Color</span>(<span style="color:#8be9fd">f64</span>, <span style="color:#8be9fd">f64</span>, <span style="color:#8be9fd">f64</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">impl</span> Color {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">fn</span> <span style="color:#50fa7b">as_string</span>(self) -&gt; <span style="color:#8be9fd;font-style:italic">String</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">let</span> Self(red, green, blue) <span style="color:#ff79c6">=</span> self;
+</span></span><span style="display:flex;"><span>        format!(<span style="color:#f1fa8c">&#34;red: {}, green: {}, blue: {}&#34;</span>, red, green, blue)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example, I have a struct <code>Color</code> that has three fields: <code>red</code>, <code>green</code> and <code>blue</code>. When calling <code>as_string</code> on
+this struct,
+the three fields are extracted into the local variables <code>red</code>, <code>green</code> and <code>blue</code>, and formatted into a string.
+This is a minimal example, but it shows how pattern matching can be used to reduce code.</p>
+<hr>
+<p>Not only can you use it in cases like this, but also for matching against enum variants:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#ff79c6">enum</span> <span style="color:#50fa7b">WifiState</span> {
+</span></span><span style="display:flex;"><span>    Disconnected,
+</span></span><span style="display:flex;"><span>    Connected { ssid: <span style="color:#8be9fd;font-style:italic">String</span> },
+</span></span><span style="display:flex;"><span>    Error(<span style="color:#8be9fd">i64</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This enumeration has 3 variants: <code>Disconnected</code>, <code>Connected</code> and <code>Error</code>, but <code>Connected</code> has a field <code>ssid</code> that
+represents the
+SSID of the network.</p>
+<p>When calling <code>get_connection_ssid</code> on this enum, the variant is extracted into the local variable <code>state</code>, and the
+fields are extracted
+I can create a new method called <code>get_connection_ssid</code> that returns the SSID of the connection if it&rsquo;s connected:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#ff79c6">impl</span> WifiState {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">fn</span> <span style="color:#50fa7b">get_connection_ssid</span>(<span style="color:#ff79c6">&amp;</span>self) -&gt; <span style="color:#8be9fd;font-style:italic">Option</span><span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd;font-style:italic">String</span><span style="color:#ff79c6">&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">match</span> self {
+</span></span><span style="display:flex;"><span>            Self::Connected { ssid } <span style="color:#ff79c6">=&gt;</span> <span style="color:#8be9fd;font-style:italic">Some</span>(ssid.clone()),
+</span></span><span style="display:flex;"><span>            _ <span style="color:#ff79c6">=&gt;</span> <span style="color:#8be9fd;font-style:italic">None</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="option">
+  Option
+  <a class="heading-link" href="#option">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In <strong>safe</strong> Rust, there&rsquo;s no way to have null pointer dereferences. There&rsquo;s no way to <strong>create</strong> a null pointer.
+This is by design, and I think it&rsquo;s fantastic.
+Instead, you can use the <code>Option</code> type to define that there&rsquo;s no value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> x_has_value <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">Some</span>(<span style="color:#bd93f9">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> x_has_no_value <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">None</span>;
+</span></span></code></pre></div><p>If you want to use the value inside the <code>Option</code>, you must unwrap it first. It can be done using Pattern matching:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> x_has_value <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">Some</span>(<span style="color:#bd93f9">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">match</span> x_has_value {
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Some</span>(x) <span style="color:#ff79c6">=&gt;</span> println!(<span style="color:#f1fa8c">&#34;x has value {}&#34;</span>, x),
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">None</span> <span style="color:#ff79c6">=&gt;</span> println!(<span style="color:#f1fa8c">&#34;x has no value&#34;</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It can also be checked with <code>if let</code> statements:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> x_has_value <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">Some</span>(<span style="color:#bd93f9">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">let</span> <span style="color:#8be9fd;font-style:italic">Some</span>(x) <span style="color:#ff79c6">=</span> x_has_value {
+</span></span><span style="display:flex;"><span>println!(<span style="color:#f1fa8c">&#34;x has value {}&#34;</span>, x);
+</span></span><span style="display:flex;"><span>} <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>println <span style="color:#ff79c6">!</span> (<span style="color:#f1fa8c">&#34;x has no value&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Which is the same as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> x_has_value <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">Some</span>(<span style="color:#bd93f9">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> x_has_value.is_some() {
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> x <span style="color:#ff79c6">=</span> x_has_value.unwrap();
+</span></span><span style="display:flex;"><span>println! (<span style="color:#f1fa8c">&#34;x has value {}&#34;</span>, x);
+</span></span><span style="display:flex;"><span>} <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>println <span style="color:#ff79c6">!</span> (<span style="color:#f1fa8c">&#34;x has no value&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="result-and-the--operator">
+  Result and the ? operator
+  <a class="heading-link" href="#result-and-the--operator">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In Go, normally, the functions return a tuple of the value and an error, and the error must be checked all the time:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>result, err <span style="color:#ff79c6">:=</span> <span style="color:#50fa7b">doSomething</span>()
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> err <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nil</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">return</span> err
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#50fa7b">Println</span>(result)
+</span></span></code></pre></div><p>I find this to be extremely verbose, and sometimes I find myself writing production code consisting of 50% error
+checking. In Rust, methods that can fail return a <code>Result</code> type.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#ff79c6">fn</span> <span style="color:#50fa7b">do_something</span>() -&gt; <span style="color:#8be9fd;font-style:italic">Result</span><span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">i32</span>, SomeCustomError<span style="color:#ff79c6">&gt;</span>
+</span></span></code></pre></div><p>The equivalent code in rust from the Go code would be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> computation <span style="color:#ff79c6">=</span> do_something();
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">let</span> <span style="color:#8be9fd;font-style:italic">Ok</span>(result) <span style="color:#ff79c6">=</span> computation {
+</span></span><span style="display:flex;"><span>println!(<span style="color:#f1fa8c">&#34;computation value: {}&#34;</span>, result);
+</span></span><span style="display:flex;"><span>} <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">let</span> <span style="color:#8be9fd;font-style:italic">Err</span>(error) <span style="color:#ff79c6">=</span> computation {
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">Err</span>(error.into());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This still is very verbose when using <code>if let</code> and pattern matching.
+Hopefully, we have the <code>?</code> operator to return the error to the caller:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> result <span style="color:#ff79c6">=</span> do_something() <span style="color:#ff79c6">?</span>;
+</span></span><span style="display:flex;"><span>println!(<span style="color:#f1fa8c">&#34;computation value: {}&#34;</span>, result);
+</span></span></code></pre></div><p>You can even write:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>println!(<span style="color:#f1fa8c">&#34;computation value: {}&#34;</span>, do_something()<span style="color:#ff79c6">?</span>);
+</span></span></code></pre></div><p>Isn&rsquo;t it great? 🤓</p>
+<h2 id="iterators">
+  Iterators
+  <a class="heading-link" href="#iterators">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/Iterator"  target="_blank" rel="noopener">Iterator pattern</a> is a common design pattern in computer science that
+allows traversing a container independently of the type performing some other operations on the elements.</p>
+<p>In Rust, you can implement your own Iterator very easily by just implementing
+the <a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html"  target="_blank" rel="noopener"><code>Iterator</code></a> trait. In particular, you only need to
+implement
+the <a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html#tymethod.next"  target="_blank" rel="noopener"><code>Iterator::next(&amp;mut self) -&gt; Option&lt;Self::Item&gt;</code></a>
+method.
+The rest of the methods to work with iterators
+are <a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html#provided-methods"  target="_blank" rel="noopener">implemented for you</a>, based on the first
+one.</p>
+<p>Working in Go, I&rsquo;ve been missing this pattern quite a lot. In Go, you always use <code>for</code> to iterate over things,
+whether they are a slice, a map, or a channel.</p>
+<p>So, in the end, you always end up doing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#ff79c6">for</span> index, value <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">range</span> someCollection {
+</span></span><span style="display:flex;"><span>	<span style="color:#6272a4">// use index and/or value
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>}
+</span></span></code></pre></div><p>That&rsquo;s it. You need to implement everything yourself.
+Do you want to retrieve the sum of the first three elements in a slice higher than 0? There you go:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>sum <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>elementsLeftToSum <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> _, element <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">range</span> someSlice {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> element &gt; <span style="color:#bd93f9">0</span> {
+</span></span><span style="display:flex;"><span>        sum <span style="color:#ff79c6">+=</span> element
+</span></span><span style="display:flex;"><span>        elementsLeftToSum<span style="color:#ff79c6">--</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> elementsLeftToSum <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">break</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Do you want to do the same in Rust? Easy:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>some_slice.iter().filter( <span style="color:#ff79c6">|</span> element<span style="color:#ff79c6">|</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">*</span> element <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>).take(<span style="color:#bd93f9">3</span>).sum()
+</span></span></code></pre></div><p>Needless to say, this is a time saver and ends up in better maintainable code.</p>
+<h2 id="ownership-borrowing-and-lifetimes">
+  Ownership, Borrowing and Lifetimes
+  <a class="heading-link" href="#ownership-borrowing-and-lifetimes">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>For me, this is the killer feature in Rust. This is what makes this programming language so
+powerful, making it more secure than other languages while maintaining performance without
+a Garbage Collector.</p>
+<p>Every variable has an owner. When you declare a new value of a type, the variable that
+holds it is the owner of the value. There can be only <strong>one</strong> owner at the same simultaneously, and when
+the owner goes out of the scope, the value is dropped.</p>
+<p>Now, in order to use it, you need to pass this value around, but there are two main ways of doing so:</p>
+<ul>
+<li>Giving away ownership to another variable.</li>
+<li>Lending the value to another variable that will return the ownership. This is <strong>borrowing</strong>, and it&rsquo;s done by sending
+a reference to the actual value.</li>
+</ul>
+<p>Let&rsquo;s say you have this code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> my_var <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">String</span>::new(<span style="color:#f1fa8c">&#34;AwesomeValue&#34;</span>);
+</span></span><span style="display:flex;"><span>do_something_owning(my_var);
+</span></span></code></pre></div><p>The function <code>do_something_owning</code> is acquiring ownership of the String <code>&quot;AwesomeValue&quot;</code>.
+From this function call onwards, you cannot use <code>my_var</code> anymore because it is no longer valid,
+and trying to use it again will end up in a compilation error.</p>
+<p>Do you want to call it multiple times? Do not give it ownership; just <strong>borrow it</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">let</span> my_var <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">String</span>::new(<span style="color:#f1fa8c">&#34;AwesomeValue&#34;</span>);
+</span></span><span style="display:flex;"><span>do_something_borrowing( <span style="color:#ff79c6">&amp;</span> my_var);
+</span></span><span style="display:flex;"><span>do_something_borrowing( <span style="color:#ff79c6">&amp;</span> my_var);
+</span></span><span style="display:flex;"><span>do_something_borrowing( <span style="color:#ff79c6">&amp;</span> my_var);
+</span></span></code></pre></div><p>Looking at this code example, it&rsquo;s clear that we are not sending the value itself, but a <strong>reference</strong>
+to the actual value <em>(A reference in Rust is like a pointer in C that&rsquo;s known to always be valid and
+correctly aligned)</em>.</p>
+<p>So, when sending the reference to the value, we are borrowing it. But then, another set of rules
+enters the stage.
+At any given time, you can have either:</p>
+<ul>
+<li>One <strong>mutable</strong> reference</li>
+<li>Any number of <strong>immutable</strong> references.</li>
+</ul>
+<p>References are always checked with the
+corresponding <a href="https://en.wikipedia.org/wiki/Variable_%28computer_science%29#Scope_and_extent"  target="_blank" rel="noopener">lifetimes</a> of the
+variables they point to.
+In C this code compiles <strong>but is not correct</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">*</span> <span style="color:#50fa7b">evil_function_returning_dangling</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> my_var <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">42</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&amp;</span>my_var;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>When executing it, it&rsquo;s (obviously) killed by the OS with <code>Segmentation fault (core dumped)</code> because
+dereferencing a dangling pointer is <a href="https://en.wikipedia.org/wiki/Undefined_behavior"  target="_blank" rel="noopener">Undefined Behavior</a>.</p>
+<p>Same code in Rust:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#ff79c6">fn</span> <span style="color:#50fa7b">evil_function_returning_dangling</span>() -&gt; <span style="color:#ff79c6">&amp;</span><span style="color:#8be9fd">i32</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">let</span> my_var <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">42</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&amp;</span>my_var;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It fails to compile with the following error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span>error[E0515]: cannot <span style="color:#ff79c6">return</span> reference <span style="color:#ff79c6">to</span> local variable <span style="color:#ff79c6">`</span>my_var<span style="color:#ff79c6">`</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff79c6">--&gt;</span> src<span style="color:#ff79c6">/</span>main.rs:<span style="color:#bd93f9">3</span>:<span style="color:#bd93f9">12</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#bd93f9">3</span> <span style="color:#ff79c6">|</span>     <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">&amp;</span>my_var;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">|</span>            <span style="color:#ff79c6">^^^^^^^</span> returns a reference <span style="color:#ff79c6">to</span> data owned <span style="color:#ff79c6">by</span> the current function
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">For</span> more information about this error, try <span style="color:#ff79c6">`</span>rustc <span style="color:#ff79c6">--</span><span style="color:#ff79c6">explain</span> E0515<span style="color:#ff79c6">`</span>.
+</span></span></code></pre></div><p>The code will never compile because it&rsquo;s not valid. More info
+at <a href="https://doc.rust-lang.org/error_codes/E0515.html"  target="_blank" rel="noopener">E0515</a>.</p>
+<p>This prevents the existence of <a href="https://en.wikipedia.org/wiki/Race_condition#Data_race"  target="_blank" rel="noopener">data races</a>,
+<a href="https://en.wikipedia.org/wiki/Null_pointer"  target="_blank" rel="noopener">null pointers</a>,
+and <a href="https://en.wikipedia.org/wiki/Dangling_pointer"  target="_blank" rel="noopener">dangling pointers</a>
+at compile time.</p>
+<p>To wrap it up, my experience with Rust has been incredibly positive. The language&rsquo;s features such as traits, automatic
+trait derivation, pattern matching, option type, simplified error handling, expressive iterators, and
+ownership/borrowing have impressed me greatly. Rust has become my language of choice, as it offers a powerful and secure
+programming experience.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    
+  </section>
+</footer>
+
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.27afce394fb6284f521b3fbc9f6a8326342333c3092267f3944d770489876fed.js" integrity="sha256-J6/OOU&#43;2KE9SGz&#43;8n2qDJjQjM8MJImfzlE13BImHb&#43;0="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

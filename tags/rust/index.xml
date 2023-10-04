@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on Federico Barcelona</title>
+    <link>https://federico.barcelona/tags/rust/</link>
+    <description>Recent content in Rust on Federico Barcelona</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 06 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://federico.barcelona/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Things that made me love Rust</title>
+      <link>https://federico.barcelona/posts/things-that-made-me-love-rust/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federico.barcelona/posts/things-that-made-me-love-rust/</guid>
+      <description>I have recently started working on the final project for the University, and I decided to do it in Rust, mainly to learn more about the language. You can try to learn a language by just reading, but the actual learning comes from actually writing code and facing the creation of a working program.
+I am currently a Go developer at Sysdig, and I have to admit that I tried to write Rust code like I wrote Go.</description>
+    </item>
+    
+  </channel>
+</rss>

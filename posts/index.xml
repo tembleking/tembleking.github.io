@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Federico Barcelona</title>
+    <link>https://federico.barcelona/posts/</link>
+    <description>Recent content in Posts on Federico Barcelona</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 06 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://federico.barcelona/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevOps Beware: The Sad Truth About SOPS and Secret Management</title>
+      <link>https://federico.barcelona/posts/sops-falls-sort-secret-management/</link>
+      <pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://federico.barcelona/posts/sops-falls-sort-secret-management/</guid>
+      <description>I&amp;rsquo;ve read everywhere the miracles of using SOPS within a project to maintain the secrets in a secure way within the source code of the project, or even for GitOps and CI/CD pipelines. But, is it really that secure? Let&amp;rsquo;s buckle up for a wild ride through the chaotic world of secret management. Strap in tightly because we&amp;rsquo;re about to explore why SOPS falls short in being a secret management superhero we&amp;rsquo;ve been told.</description>
+    </item>
+    
+    <item>
+      <title>Things that made me love Rust</title>
+      <link>https://federico.barcelona/posts/things-that-made-me-love-rust/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://federico.barcelona/posts/things-that-made-me-love-rust/</guid>
+      <description>I have recently started working on the final project for the University, and I decided to do it in Rust, mainly to learn more about the language. You can try to learn a language by just reading, but the actual learning comes from actually writing code and facing the creation of a working program.
+I am currently a Go developer at Sysdig, and I have to admit that I tried to write Rust code like I wrote Go.</description>
+    </item>
+    
+  </channel>
+</rss>
