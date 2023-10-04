@@ -10,14 +10,19 @@ Cloud Security Software Engineer at Sysdig
   
 - **Cloud Security Software Engineer** _(Jan 2021 - Present)_
 
-  Develop a new product called [Cloud Connector](https://docs.sysdig.com/en/docs/sysdig-secure/sysdig-secure-for-cloud/)
+  - Develop a new product called [Cloud Connector](https://docs.sysdig.com/en/docs/sysdig-secure/sysdig-secure-for-cloud/)
   that allows customers to quickly identify security threats in their cloud environments at
   runtime,
   allowing them to respond quickly, using [**BDD**](https://en.wikipedia.org/wiki/Behavior-driven_development),
   [**DDD**](https://en.wikipedia.org/wiki/Domain-driven_design) and following
   [**eXtreme Programming**](https://en.wikipedia.org/wiki/Extreme_programming) practices.
 
-  Rule syntax based on [CNCF's OSS Falco](https://falco.org/).
+    Rule syntax based on [CNCF's OSS Falco](https://falco.org/).
+
+  - Development of a vulnerability analysis engine for Docker image registries that allows for the scalable analysis of
+  vulnerabilities in our customers' images. Support for AWS's ECR, Azure's ACR, IBM's ICR, Quay.io, Harbor, and Jfrog Artifactory.
+
+  
 
 - **Product Integrations Engineer** _(Feb 2020 - Jan 2021)_
 
