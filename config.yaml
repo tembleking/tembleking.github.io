@@ -3,7 +3,8 @@ title: Federico Barcelona
 theme: hugo-coder
 languagecode: en
 defaultcontentlanguage: en
-paginate: 20
+pagination:
+  pagerSize: 20
 pygmentsstyle: b2
 pygmentscodefences: true
 pygmentscodefencesguesssyntax: true
@@ -43,7 +44,7 @@ params:
   author: Federico Barcelona
   description: Federico Barcelona's personal website
   keywords: 'blog,developer,personal,devops'
-  info: DevOps & Cloud Security Software Engineer at Sysdig
+  info: Senior Technical Enablement Engineer at Sysdig
   avatarurl: images/fede.jpg
   footercontent: ''
   dateformat: 'January 2, 2006'

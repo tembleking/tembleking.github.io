@@ -1,45 +1,49 @@
 # Federico Barcelona Auria
 
-Cloud Security Software Engineer at Sysdig
+Senior Technical Enablement Engineer at Sysdig, focused on API quality, developer experience, and cloud security.
 
 ![Portrait](/images/fede.jpg)
 
+I'm a Senior Technical Enablement Engineer at Sysdig, focused on **API quality**, **developer experience**, and **cloud security**. Over the years I've moved from building customer demos and integrations, to core security products, and now to enabling engineers and customers with better APIs, tooling, and documentation.
+
+I enjoy turning messy systems into something **predictable, well-specified, and easy to integrate**, and I like working close to both code and people: pairing, writing, teaching, and automating repetitive work (including with local AI tools).
+
 ## 👨‍💻 Experience
 -------------
-### [Sysdig] _(5 years+)_
-  
-- **Cloud Security Software Engineer** _(Jan 2021 - Present)_
+### [Sysdig] _(7+ years)_
 
-  - Develop a new product called [Cloud Connector](https://docs.sysdig.com/en/docs/sysdig-secure/sysdig-secure-for-cloud/)
-  that allows customers to quickly identify security threats in their cloud environments at
-  runtime,
-  allowing them to respond quickly, using [**BDD**](https://en.wikipedia.org/wiki/Behavior-driven_development),
-  [**DDD**](https://en.wikipedia.org/wiki/Domain-driven_design) and following
-  [**eXtreme Programming**](https://en.wikipedia.org/wiki/Extreme_programming) practices.
+- **Sr. Technical Enablement Engineer** _(Nov 2025 - Present)_
 
-    Rule syntax based on [CNCF's OSS Falco](https://falco.org/).
+  Lead technical enablement initiatives for Support and Product teams, with a focus on **API design, specifications, and developer experience**. Drive consistency across services: pagination models, error handling, authentication flows, and schema definitions. Build internal tools, examples, and documentation that reduce friction for customers integrating with Sysdig APIs and MCP. Partner with engineering and product management to turn customer pain points into concrete improvements in our API surface and docs.
 
-  - Development of a vulnerability analysis engine for Docker image registries that allows for the scalable analysis of
-  vulnerabilities in our customers' images. Support for AWS's ECR, Azure's ACR, IBM's ICR, Quay.io, Harbor, and Jfrog Artifactory.
+- **Technical Enablement Engineer II** _(Aug 2025 - Nov 2025)_
 
-  
+  Senior individual contributor in the enablement team, evolving tooling, runbooks, and training content used by Support and field engineers. Formalized best practices around **API usage, automation, and incident diagnostics**, improving time-to-resolution for complex cases.
 
-- **Product Integrations Engineer** _(Feb 2020 - Jan 2021)_
+- **Technical Enablement Engineer** _(Jul 2024 - Jul 2025)_
 
-  Develop and integrate satellite applications around the product:
-    - [CLI](https://docs.sysdig.com/en/docs/developer-tools/sysdig-cli-for-sysdig-monitor-and-secure/) to allow
-      customers to execute operations without a GUI
-    - [Python SDK](https://docs.sysdig.com/en/docs/developer-tools/sysdig-python-client/) to enable customers to integrate
-      their toolset with our products and automate workflows.
-    - [Terraform Provider](https://sysdig.com/blog/sysdig-terraform-provider/) to allow customers to configure our products
-      as code.
-    - Deployment automation of production cloud demo environments and maintenance as IaC.
+  First Technical Enablement Engineer in the Product organization, bridging **engineering, support, and customers**. Defined patterns and templates for **API guides, SDK usage, and Terraform/CLI workflows**, standardizing how we explain and expose features. Created enablement material (docs, examples, internal talks) that accelerated onboarding for new Support and Product teammates.
 
-- **Marketing Integrations Engineer** _(Apr 2018 - Feb 2020)_
+- **Software Engineer II – Secure** _(Oct 2022 - Jun 2024)_
 
-  Maintain production demo environments in **AWS EC2**, **AWS EKS** and **GKE**, develop integrations in the fast-evolving cloud native
-  landscape with cutting-edge technologies, write about them in Sysdig's blog, and give talks around Europe.
-  👨‍🏫✈️
+  Worked on **cloud security** features in the Secure product. Maintained and improved [Cloud Connector](https://docs.sysdig.com/en/docs/sysdig-secure/sysdig-secure-for-cloud/), enabling customers to detect runtime threats in cloud environments and respond quickly. Helped evolve the vulnerability analysis engine for container image registries, scaling to large customer environments and multiple registries (ECR, ACR, ICR, Quay, Harbor, Artifactory). Contributed to [Falco](https://falco.org/) rule-based detection and security workflows.
+
+- **Software Engineer – Secure** _(Jan 2021 - Sep 2022)_
+
+  Developed security features around **image scanning and runtime detection**. Improved the reliability and performance of scanning pipelines and integrations with external registries and CI/CD systems. Worked in an XP-style team ([TDD](https://en.wikipedia.org/wiki/Test-driven_development)/[BDD](https://en.wikipedia.org/wiki/Behavior-driven_development), pairing, continuous refactoring) to keep the codebase maintainable while shipping new capabilities.
+
+- **Junior Integrations Engineer** _(Feb 2020 - Dec 2020)_
+
+  Built and maintained integrations around the core Sysdig platform:
+    - [CLI](https://docs.sysdig.com/en/docs/developer-tools/sysdig-cli-for-sysdig-monitor-and-secure/) for headless operations and scripting.
+    - [Python SDK](https://docs.sysdig.com/en/docs/developer-tools/sysdig-python-client/) for automating workflows and integrating with customers' internal tools.
+    - [Terraform Provider](https://sysdig.com/blog/sysdig-terraform-provider/) so customers could manage Sysdig resources as code.
+
+  Automated deployment of production demo environments as IaC, keeping them reproducible and easy to refresh.
+
+- **Junior Marketing Integration Engineer** _(Apr 2018 - Jan 2020)_
+
+  Maintained production demo environments in **AWS EC2**, **AWS EKS** and **GKE**. Built integrations with emerging cloud-native and observability technologies, and showcased them in events across Europe:
     - [ProfitBricks GmbH Berlin 2018](https://community.cncf.io/events/details/cncf-berlin-kubernetes-meetup-presents-kubernetes-berlin-15-failure-points-of-kubernetes/)
     - RedHat Forum 2018
     - DockerCon 2018
@@ -48,36 +52,43 @@ Cloud Security Software Engineer at Sysdig
     - KubeCon 2019
     - [BSides Berlin 2020](https://twitter.com/SidesBer/status/1231218585969840128)
 
-  Some blog posts I wrote:
+  Wrote technical blog posts translating complex setups into practical how-tos:
     - [Announcing the enhanced Sysdig Terraform Provider](https://sysdig.com/blog/sysdig-terraform-provider/)
     - [Image scanning for CircleCI](https://sysdig.com/blog/image-scanning-circleci/)
     - [Inline Image Scanning for AWS CodePipeline and AWS CodeBuild](https://sysdig.com/blog/image-scanning-aws-codepipeline-codebuild/)
     - [Image scanning for Azure Pipelines](https://sysdig.com/blog/image-scanning-azure-pipelines/)
     - [JMX monitoring + Java custom metrics](https://sysdig.com/blog/jmx-monitoring-custom-metrics/)
     - [Prometheus metrics / OpenMetrics code instrumentation](https://sysdig.com/blog/prometheus-metrics/)
-    - [JMX monitoring + Java custom metrics](https://sysdig.com/blog/jmx-monitoring-custom-metrics/)
     - [Monitoring Java applications: Memory usage, threads and other JRE metrics](https://sysdig.com/blog/monitoring-java-jre/)
 
 ### [Alerce] _(2 years and 10 months)_
 
 - **Integrations Programmer** _(Jul 2015 - Apr 2018)_
 
-  Integrated Products / R+D+I
-
-  Development of the Alerce's Global Tracking System:
-    - Full frontend development to material and responsive design from the ground up.
-    - Development and improvement of the backend in Java.
-    - Database maintenance.
-    - Development of a Magento plugin to integrate GTS's features in the clients' shops.
+  Developed the Alerce's [Global Tracking System](https://www.alerce-group.com/es/) (GTS) frontend from scratch using responsive, material-inspired design. Improved and maintained the Java backend and database layer. Built a Magento plugin to expose GTS features directly inside customer e-commerce sites.
 
 ## 📚 Skills
 ---------
 
-Below you can find the list of skills I have acquired during my career. In bold are the skills I love the most. I link them for HR people reading this, if you are a technical person, obviously, you will know them already 😁.
+**Languages**
+- **Daily use:** Go, Python, JavaScript
+- **Also worked with:** Rust, Java, C/C++, PHP
+- Plus the usual suspects: HTML, CSS, SQL.
 
-- **Languages**: [C](https://en.wikipedia.org/wiki/C_(programming_language))/[C++](https://en.wikipedia.org/wiki/C%2B%2B), [**Go**](https://en.wikipedia.org/wiki/Go_(programming_language)), [**Rust**](https://en.wikipedia.org/wiki/Rust_(programming_language)), [JavaScript](https://en.wikipedia.org/wiki/JavaScript), [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), [Python](https://en.wikipedia.org/wiki/Python_(programming_language)), [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language)), [PHP](https://en.wikipedia.org/wiki/PHP). Needless to say, also obviously HTML, CSS, SQL and other non [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness) languages.
-- **Tools**: [**Git**](https://en.wikipedia.org/wiki/Git), [Docker](https://en.wikipedia.org/wiki/Docker_(software)), [**Kubernetes**](https://en.wikipedia.org/wiki/Kubernetes), [**Terraform**](https://en.wikipedia.org/wiki/Terraform_(software)), [MongoDB](https://en.wikipedia.org/wiki/MongoDB), [Node.js](https://en.wikipedia.org/wiki/Node.js), [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL), [MySQL](https://en.wikipedia.org/wiki/MySQL), [Oracle DBMS](https://en.wikipedia.org/wiki/Oracle_Database).
-- **Other**: [**TDD**](https://en.wikipedia.org/wiki/Test-driven_development)/[**BDD**](https://en.wikipedia.org/wiki/Behavior-driven_development), [**Ports and adapters architecture**](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)), [**XP**](https://en.wikipedia.org/wiki/Extreme_programming)
+**Cloud-native & Security**
+- Docker, Kubernetes, Helm
+- Image scanning, runtime security, Falco rule syntax
+- AWS, GCP; Kubernetes security best practices
+
+**Developer Experience & Tooling**
+- API design & specification (OpenAPI, pagination, error models, authentication)
+- SDKs, CLIs, Terraform providers
+- CI/CD and automation with GitHub, GitLab, Jenkins, AWS CodePipeline/CodeBuild, Terraform
+
+**Practices**
+- TDD/BDD, XP, pair programming
+- Ports & adapters / hexagonal architecture
+- Documentation, internal enablement, and technical coaching
 
 ## 👨‍🎓 Education
 ------------
@@ -85,12 +96,12 @@ Below you can find the list of skills I have acquired during my career. In bold 
 #### [University of Zaragoza]
 
 - **Computer Science Engineering** _(2015 - 2022)_
-- **Vicepresident and secretary of the Free Software Student Association** -- Pulsar _(2017 - 2019)_
+- Vice president and secretary of the Free Software Student Association **Pulsar** _(2017 - 2019)_
 
 #### [Salesianos Zaragoza]
 
-- **Higher Degree of Vocational Training - Development of multiplatform applications** _(2013-2015)_
-- **Bachelor's Degree, Technological Discipline** _(2011 - 2013)_
+- **Higher Degree of Vocational Training — Development of Multiplatform Applications** _(2013 - 2015)_
+- **Technological Baccalaureate** _(2011 - 2013)_
 
 ## 📄 Licenses and certifications
 ------------------------------

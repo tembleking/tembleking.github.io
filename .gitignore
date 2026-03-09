@@ -153,3 +153,5 @@ tags
 [._]*.un~
 
 # End of https://www.toptal.com/developers/gitignore/api/git,hugo,linux,intellij+all,vim
+
+.direnv/
