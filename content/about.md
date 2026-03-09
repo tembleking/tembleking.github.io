@@ -14,7 +14,11 @@ I enjoy turning messy systems into something **predictable, well-specified, and 
 
 - **Sr. Technical Enablement Engineer** _(Nov 2025 - Present)_
 
-  Lead technical enablement initiatives for Support and Product teams, with a focus on **API design, specifications, and developer experience**. Drive consistency across services: pagination models, error handling, authentication flows, and schema definitions. Build internal tools, examples, and documentation that reduce friction for customers integrating with Sysdig APIs and MCP. Partner with engineering and product management to turn customer pain points into concrete improvements in our API surface and docs.
+  Lead technical enablement initiatives for Support and Product teams, with a focus on **API design, specifications, and developer experience**.
+    - Drive consistency across services: pagination models, error handling, authentication flows, and schema definitions.
+    - Build internal tools, examples, and documentation that reduce friction for customers integrating with Sysdig APIs.
+    - Design and maintain the [Sysdig MCP server](https://github.com/sysdiglabs/sysdig-mcp-server) and AI agent tooling so LLMs can query and operate on Sysdig data directly.
+    - Partner with engineering and product management to turn customer pain points into concrete improvements in our API surface and docs.
 
 - **Technical Enablement Engineer II** _(Aug 2025 - Nov 2025)_
 
