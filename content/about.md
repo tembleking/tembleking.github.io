@@ -10,7 +10,7 @@ I enjoy turning messy systems into something **predictable, well-specified, and 
 
 ## 👨‍💻 Experience
 -------------
-### [Sysdig] _(7+ years)_
+### [Sysdig] _(8+ years)_
 
 - **Sr. Technical Enablement Engineer** _(Nov 2025 - Present)_
 
