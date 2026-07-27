@@ -1,10 +1,13 @@
-# Federico Barcelona Auria
+---
+title: "Federico Barcelona Auria"
+description: "Senior Technical Enablement Engineer at Sysdig, focused on API quality, developer experience, and cloud security."
+---
 
 Senior Technical Enablement Engineer at Sysdig, focused on API quality, developer experience, and cloud security.
 
 ![Portrait](/images/fede.jpg)
 
-I'm a Senior Technical Enablement Engineer at Sysdig, focused on **API quality**, **developer experience**, and **cloud security**. Over the years I've moved from building customer demos and integrations, to core security products, and now to enabling engineers and customers with better APIs, tooling, and documentation.
+Over the years I've moved from building customer demos and integrations, to core security products, and now to enabling engineers and customers with better APIs, tooling, and documentation.
 
 I enjoy turning messy systems into something **predictable, well-specified, and easy to integrate**, and I like working close to both code and people: pairing, writing, teaching, and automating repetitive work (including with local AI tools).
 
@@ -15,6 +18,7 @@ I enjoy turning messy systems into something **predictable, well-specified, and 
 - **Sr. Technical Enablement Engineer** _(Nov 2025 - Present)_
 
   Lead technical enablement initiatives for Support and Product teams, with a focus on **API design, specifications, and developer experience**.
+    - Contributed to the creation of **Sysdig Headless Cloud Security**, exposing security capabilities as programmable workflows for AI agents rather than dashboard-driven flows.
     - Drive consistency across services: pagination models, error handling, authentication flows, and schema definitions.
     - Build internal tools, examples, and documentation that reduce friction for customers integrating with Sysdig APIs.
     - Design and maintain the [Sysdig MCP server](https://github.com/sysdiglabs/sysdig-mcp-server) and AI agent tooling so LLMs can query and operate on Sysdig data directly.
@@ -28,7 +32,7 @@ I enjoy turning messy systems into something **predictable, well-specified, and 
 
   First Technical Enablement Engineer in the Product organization, bridging **engineering, support, and customers**. Defined patterns and templates for **API guides, SDK usage, and Terraform/CLI workflows**, standardizing how we explain and expose features. Created enablement material (docs, examples, internal talks) that accelerated onboarding for new Support and Product teammates.
 
-- **Software Engineer II – Secure** _(Oct 2022 - Jun 2024)_
+- **Cloud Security Software Engineer II** _(Oct 2022 - Jun 2024)_
 
   Worked on **cloud security** features in the Secure product. Maintained and improved [Cloud Connector](https://docs.sysdig.com/en/docs/sysdig-secure/sysdig-secure-for-cloud/), enabling customers to detect runtime threats in cloud environments and respond quickly. Helped evolve the vulnerability analysis engine for container image registries, scaling to large customer environments and multiple registries (ECR, ACR, ICR, Quay, Harbor, Artifactory). Contributed to [Falco](https://falco.org/) rule-based detection and security workflows.
 
@@ -36,7 +40,7 @@ I enjoy turning messy systems into something **predictable, well-specified, and 
 
   Developed security features around **image scanning and runtime detection**. Improved the reliability and performance of scanning pipelines and integrations with external registries and CI/CD systems. Worked in an XP-style team ([TDD](https://en.wikipedia.org/wiki/Test-driven_development)/[BDD](https://en.wikipedia.org/wiki/Behavior-driven_development), pairing, continuous refactoring) to keep the codebase maintainable while shipping new capabilities.
 
-- **Junior Integrations Engineer** _(Feb 2020 - Dec 2020)_
+- **Product Integrations Engineer** _(Feb 2020 - Dec 2020)_
 
   Built and maintained integrations around the core Sysdig platform:
     - [CLI](https://docs.sysdig.com/en/docs/developer-tools/sysdig-cli-for-sysdig-monitor-and-secure/) for headless operations and scripting.
@@ -45,7 +49,7 @@ I enjoy turning messy systems into something **predictable, well-specified, and 
 
   Automated deployment of production demo environments as IaC, keeping them reproducible and easy to refresh.
 
-- **Junior Marketing Integration Engineer** _(Apr 2018 - Jan 2020)_
+- **Marketing Integration Engineer** _(Apr 2018 - Jan 2020)_
 
   Maintained production demo environments in **AWS EC2**, **AWS EKS** and **GKE**. Built integrations with emerging cloud-native and observability technologies, and showcased them in events across Europe:
     - [ProfitBricks GmbH Berlin 2018](https://community.cncf.io/events/details/cncf-berlin-kubernetes-meetup-presents-kubernetes-berlin-15-failure-points-of-kubernetes/)
@@ -97,15 +101,15 @@ I enjoy turning messy systems into something **predictable, well-specified, and 
 ## 👨‍🎓 Education
 ------------
 
-#### [University of Zaragoza]
+### [University of Zaragoza]
 
 - **Computer Science Engineering** _(2015 - 2022)_
 - Vice president and secretary of the Free Software Student Association **Pulsar** _(2017 - 2019)_
 
-#### [Salesianos Zaragoza]
+### [Salesianos Zaragoza]
 
 - **Higher Degree of Vocational Training — Development of Multiplatform Applications** _(2013 - 2015)_
-- **Technological Baccalaureate** _(2011 - 2013)_
+- **Spanish Baccalaureate — Sciences and Technology** _(2011 - 2013)_
 
 ## 📄 Licenses and certifications
 ------------------------------
