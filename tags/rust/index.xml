@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on Federico Barcelona</title>
+    <link>https://federico.barcelona/tags/rust/</link>
+    <description>Recent content in Rust on Federico Barcelona</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 06 May 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://federico.barcelona/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Things that made me love Rust</title>
+      <link>https://federico.barcelona/posts/things-that-made-me-love-rust/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://federico.barcelona/posts/things-that-made-me-love-rust/</guid>
+      <description>&lt;p&gt;I have recently started working on the final project for the University, and I decided to do it&#xA;in &lt;a href=&#34;https://www.rust-lang.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rust&lt;/a&gt;, mainly to learn&#xA;more about the language.&#xA;You can try to learn a language by just reading, but the actual learning comes from actually writing code and facing the&#xA;creation of a working program.&lt;/p&gt;&#xA;&lt;p&gt;I am currently a &lt;a href=&#34;https://go.dev/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt; developer at &lt;a href=&#34;https://sysdig.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sysdig&lt;/a&gt;, and I have to admit that I tried to&#xA;write Rust code like I wrote Go. This is a&#xA;mistake; both languages are very different from one another. Some things I wanted to do in Go, I couldn&amp;rsquo;t because the&#xA;language is designed to be too simplistic. I understand the tradeoffs of Go, but having to write some algorithms&#xA;yourself all the time, is just too tedious.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

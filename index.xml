@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Federico Barcelona</title>
+    <link>https://federico.barcelona/</link>
+    <description>Recent content on Federico Barcelona</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 14 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://federico.barcelona/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevOps Beware: The Sad Truth About SOPS and Secret Management</title>
+      <link>https://federico.barcelona/posts/sops-falls-sort-secret-management/</link>
+      <pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://federico.barcelona/posts/sops-falls-sort-secret-management/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve read everywhere the miracles of using SOPS within a project to maintain the secrets in a secure way within the&#xA;source&#xA;code of the project, or even for GitOps and CI/CD pipelines. But, is it really that secure?&#xA;Let&amp;rsquo;s buckle up for a wild ride through the chaotic world of secret management. Strap in tightly because we&amp;rsquo;re about to&#xA;explore why &lt;a href=&#34;https://github.com/getsops/sops&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SOPS&lt;/a&gt; falls short in being a secret management superhero we&amp;rsquo;ve been told.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Things that made me love Rust</title>
+      <link>https://federico.barcelona/posts/things-that-made-me-love-rust/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://federico.barcelona/posts/things-that-made-me-love-rust/</guid>
+      <description>&lt;p&gt;I have recently started working on the final project for the University, and I decided to do it&#xA;in &lt;a href=&#34;https://www.rust-lang.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rust&lt;/a&gt;, mainly to learn&#xA;more about the language.&#xA;You can try to learn a language by just reading, but the actual learning comes from actually writing code and facing the&#xA;creation of a working program.&lt;/p&gt;&#xA;&lt;p&gt;I am currently a &lt;a href=&#34;https://go.dev/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Go&lt;/a&gt; developer at &lt;a href=&#34;https://sysdig.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sysdig&lt;/a&gt;, and I have to admit that I tried to&#xA;write Rust code like I wrote Go. This is a&#xA;mistake; both languages are very different from one another. Some things I wanted to do in Go, I couldn&amp;rsquo;t because the&#xA;language is designed to be too simplistic. I understand the tradeoffs of Go, but having to write some algorithms&#xA;yourself all the time, is just too tedious.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Federico Barcelona Auria</title>
+      <link>https://federico.barcelona/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://federico.barcelona/about/</guid>
+      <description>&lt;p&gt;Senior Technical Enablement Engineer at Sysdig, focused on API quality, developer experience, and cloud security.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://federico.barcelona/images/fede.jpg&#34; alt=&#34;Portrait&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Over the years I&amp;rsquo;ve moved from building customer demos and integrations, to core security products, and now to enabling engineers and customers with better APIs, tooling, and documentation.&lt;/p&gt;&#xA;&lt;p&gt;I enjoy turning messy systems into something &lt;strong&gt;predictable, well-specified, and easy to integrate&lt;/strong&gt;, and I like working close to both code and people: pairing, writing, teaching, and automating repetitive work (including with local AI tools).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
